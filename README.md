@@ -1,5 +1,7 @@
 # Monthly-Budgeter
 
+Monthly budget tracker. 
+
 Uses: 
 -ECMAScript 
 -RESTful API 
