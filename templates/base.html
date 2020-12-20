@@ -1,0 +1,27 @@
+<!doctype html>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styler.css') }}">
+
+<div class="header">
+    <h1> Emily's Budgeting Website </h1> 
+</div> 
+
+<title>{% block title %}Welcome{% endblock %} | Emily's site</title>
+
+<div class="navigation">
+    {% if g.user %}
+      <a href="{{ url_for('homepage') }}">Homepage</a> |
+      <a href="{{ url_for('logout') }}">Sign out {{ g.user.username }}</a> 
+      
+    {% else %}
+      <a href="{{ url_for('homepage') }}">Event Homepage</a> |
+      <a href="{{ url_for('register') }}">Register</a> |
+      <a href="{{ url_for('login') }}">Sign In</a>
+    {% endif %}
+  {% block body %}
+  <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+  {% endblock %}
+  </div>
+  <div class="footer">
+    Emily Miller's Budgeting  Site for CS 1520 Final Project!
+  </div>
+</div>

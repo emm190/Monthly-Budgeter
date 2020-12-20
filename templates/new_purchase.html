@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block body %}
+{% block title %}{% endblock %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+		</head>
+	<body>
+		
+		<h2 id="currentMonth">Current Month is: </h2>
+		<h1> Your current budget this month!</h1>
+		<h3> Scroll down to add categories or delete categories & to add purchases.</h3>
+			<table id = "theTable">
+			<tr id = "rowOfLabels">
+				<td> CATEGORY NAME: </td>
+				<td> CATEGORY LIMIT: </td>
+				<td> SPENT: </td>
+				<td> REMAINING: </td>
+			</tr>
+		</table>
+		<br>
+		<h2> Add a New Category </h2>
+		<br>
+		<div class = "row">
+		<div class = "leftcolumn">
+		<form name="categoryForm" id="categoryForm">
+			<input type="text" id="categoryName" placeholder="Category Name" required />
+			<input type="number" id="categoryValue" placeholder="Limit per Month" required />
+			<input type="button" id="categoryButton" value="Submit" />
+		</form>
+		</div>
+		<h2> Delete a Category </h2>
+		<div class = "rightcolumn">
+		<form name="deleteButton" id="deleteButton">
+			<br>
+			<label for="categories">Select Category:</label>
+			<br>
+			<select name="categories" id="categories"> </select>
+			<input type="button" id="submitDeleteButton" value="Delete" />
+		</form>
+		</div>
+		</div>
+		<br>
+		<h2> Add a New Purchase </h2>
+		<br>
+		<form name="purchaseForm" id="purchaseForm">
+			<br>
+			Purchase Name: 
+			<br>
+			<input type="text" id="purchaseName" placeholder="Purchase Name" required />
+			<br>
+			Date (YYYY-MM-DD HH:MM format):
+			<br>
+			<input type="datetime" id="purchaseDate" placeholder="YYYY-MM-DD HH:MM format"/>
+			<br>
+			Amount spent: 
+			<br>
+			<input type="number" id="amountSpent" placeholder="Amount Spent" required /> 
+			<br>
+			<label for="categoriesSelect">Select Category:</label>
+			<br>
+			<select name="categoriesSelect" id="categoriesSelect"> </select>
+			<input type="button" id="purchaseButton" value="Submit" />
+		</form>
+		<br>
+	</body>
+</html>
+{% endblock %}
